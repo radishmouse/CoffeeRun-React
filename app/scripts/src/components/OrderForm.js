@@ -24,7 +24,7 @@ export default class OrderForm extends React.Component {
     ));
 
     console.log(this.props.order);
-
+      
     return (
      <section>
       <div className="panel panel-default">
@@ -32,18 +32,18 @@ export default class OrderForm extends React.Component {
           <form action="#" method="post" onSubmit={this._doSubmit.bind(this)}>
 
             <Input name="coffee"
-              value={this.props.order.coffee || ''}
-              type="text"
-              placeholder="quintuple espresso"
-              changeActionHandler={this._doChange.bind(this)}
-              autoFocus={true}
-              />
+                   value={this.props.order.coffee || ''}
+                   type="text"
+                   placeholder="quintuple espresso"
+                   changeActionHandler={this._doChange.bind(this)}
+                   autoFocus={true}
+                   />
             <Input name="email"
-              value={this.props.order.email || ''}
-              type="email"
-              placeholder="bob@bob.com"
-              changeActionHandler={this._doChange.bind(this)}
-              />
+                   value={this.props.order.email || ''}
+                   type="email"
+                   placeholder="bob@bob.com"
+                   changeActionHandler={this._doChange.bind(this)}
+                   />
 
             {radioGroup}
 
@@ -72,8 +72,7 @@ export default class OrderForm extends React.Component {
   _doSubmit(event) {
     event.preventDefault();
     console.log('submit the form');
-    // this.props.changeOrderHandler(valObj);
-    this.props.changeOrderHandler(valObj);
+    this.props.newOrderHandler();
   }
 
   _doReset(event) {

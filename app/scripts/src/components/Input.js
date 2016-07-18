@@ -17,14 +17,14 @@ export default class Input extends React.Component {
           {label}
         </label>
         <input className={className} id={`id-${this.props.name}`}
-          key={`id-${this.props.name}`}
-          type={this.props.type}
-          value={this.props.value}
-          placeholder={this.props.placeholder}
-          onChange={this._handleChange.bind(this)}
-          autoFocus={this.props.autoFocus}
-          />
-        </div>
+               key={`id-${this.props.name}`}
+               type={this.props.type}
+               value={this.props.value}
+               placeholder={this.props.placeholder}
+               onChange={this._handleChange.bind(this)}
+               autoFocus={this.props.autoFocus}
+               />
+      </div>
     );
   }
 

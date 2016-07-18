@@ -1,0 +1,32 @@
+{
+  "name": "react-es6-yeah",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "browserify -d app/scripts/src/main.js -o app/scripts/dist/main.js",
+    "watch": "watchify -v -d app/scripts/src/main.js -o app/scripts/dist/main.js",
+    "ugly": "uglifyjs app/scripts/dist/main.js -o app/scripts/dist/main.min.js -c -m"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "sourceMap": true
+        }
+      ]
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "nodemon": "^1.9.2",
+    "react": "^0.13.3",
+    "watchify": "^3.4.0"
+  }
+}

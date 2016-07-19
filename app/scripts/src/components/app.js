@@ -8,9 +8,9 @@ const TEMP_DATA = [{"coffee":"frappe","email":"you@hoo.com","size":"grande","fla
 const EMPTY_ORDER = {
   coffee: '',
   email: '',
-  size: '',
+  size: 'tall',
   flavor: '',
-  strength: ''
+  strength: '30'
 };
 
 export default class CoffeeRunApp extends React.Component {

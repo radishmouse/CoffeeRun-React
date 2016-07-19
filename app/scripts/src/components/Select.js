@@ -11,10 +11,10 @@ export default class Select extends React.Component {
       <div className="form-group">
         <label htmlFor="flavorShot">Flavor Shot</label>
         <select id="flavorShot" className="form-control" name="flavor" onChange={this._handleChoice.bind(this)}>
-            <option value="">None</option>
-            <option value="caramel">Caramel</option>
-            <option value="almond">Almond</option>
-            <option value="mocha">Mocha</option>
+          <option value="">None</option>
+          <option value="caramel">Caramel</option>
+          <option value="almond">Almond</option>
+          <option value="mocha">Mocha</option>
         </select>
       </div>
     );

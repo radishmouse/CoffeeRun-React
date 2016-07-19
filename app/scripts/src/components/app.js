@@ -56,7 +56,7 @@ export default class CoffeeRunApp extends React.Component {
 
   _createOrder() {
     if (this.state.currentOrder.email) {
-      let _orders = Array.from(this.state.orders);
+      let _orders = Array.from(this.state.orders.filter((item) => item.email !== this.state.currentOrder.email));
       _orders.push(this.state.currentOrder);
       this.setState({
         orders: _orders,

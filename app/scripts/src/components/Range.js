@@ -9,7 +9,7 @@ export default class Range extends React.Component {
     return (
       <div class="form-group">
         <label for="strengthLevel">Caffeine Rating</label>
-        <input name="strength" id="strengthLevel" type="range" value="30" onChange={this._handleChange.bind(this)} />
+        <input name="strength" id="strengthLevel" type="range" onChange={this._handleChange.bind(this)} />
       </div>
     );
   }

@@ -28,11 +28,11 @@ export default class CoffeeRunApp extends React.Component {
     return (
       <div>
         <OrderForm order={this.state.currentOrder}
-          changeOrderHandler={this._changeCurrentOrder.bind(this)}
-          newOrderHandler={this._createOrder.bind(this)}/>
+                   changeOrderHandler={this._changeCurrentOrder.bind(this)}
+                   newOrderHandler={this._createOrder.bind(this)}/>
         <CheckList orders={this.state.orders}
-          checkActionHandler={this._deliverOrder.bind(this)}
-          />
+                   checkActionHandler={this._deliverOrder.bind(this)}
+        />
       </div>
     );
   }

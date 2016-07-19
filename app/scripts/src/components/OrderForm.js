@@ -26,41 +26,46 @@ export default class OrderForm extends React.Component {
     console.log(this.props.order);
       
     return (
-     <section>
-      <div className="panel panel-default">
-        <div className="panel-body">
-          <form action="#" method="post" onSubmit={this._doSubmit.bind(this)}>
+      <section>
+        <div className="panel panel-default">
+          <div className="panel-body">
+            <form
+                action="#"
+                method="post"
+                onSubmit={this._doSubmit.bind(this)}
+                ref={(ref) => this.formEl = ref}
+            >
 
-            <Input name="coffee"
-                   value={this.props.order.coffee || ''}
-                   type="text"
-                   placeholder="quintuple espresso"
-                   changeActionHandler={this._doChange.bind(this)}
-                   autoFocus={true}
-                   />
-            <Input name="email"
-                   value={this.props.order.email || ''}
-                   type="email"
-                   placeholder="bob@bob.com"
-                   changeActionHandler={this._doChange.bind(this)}
-                   />
-
-            {radioGroup}
-
-            <Select />
-
-            <Input name="strength"
-              value={this.props.order.strength || 11}
-              type="range"
-              changeActionHandler={this._doChange.bind(this)}
+              <Input name="coffee"
+                     value={this.props.order.coffee || ''}
+                     type="text"
+                     placeholder="quintuple espresso"
+                     changeActionHandler={this._doChange.bind(this)}
+                     autoFocus={true}
+              />
+              <Input name="email"
+                     value={this.props.order.email || ''}
+                     type="email"
+                     placeholder="bob@bob.com"
+                     changeActionHandler={this._doChange.bind(this)}
               />
 
-            <button onClick={this._doSubmit.bind(this)} type="submit" className="btn btn-default">Submit</button>
-            <button onClick={this._doReset.bind(this)} type="reset" className="btn btn-default">Reset</button>
-          </form>
+              {radioGroup}
+
+              <Select />
+
+              <Input name="strength"
+                     value={this.props.order.strength || 11}
+                     type="range"
+                     changeActionHandler={this._doChange.bind(this)}
+              />
+
+              <button onClick={this._doSubmit.bind(this)} type="submit" className="btn btn-default">Submit</button>
+              <button onClick={this._doReset.bind(this)} type="reset" className="btn btn-default">Reset</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     );
   }
 
@@ -73,9 +78,13 @@ export default class OrderForm extends React.Component {
     event.preventDefault();
     console.log('submit the form');
     this.props.newOrderHandler();
+    this._doReset();
   }
 
-  _doReset(event) {
+  _doReset() {
     console.log('reset the form');
+    /* event.target.elements[0].focus();*/
+    this.formEl.getDOMNode().reset();
+    this.formEl.getDOMNode().elements[0].focus();
   }
 }
